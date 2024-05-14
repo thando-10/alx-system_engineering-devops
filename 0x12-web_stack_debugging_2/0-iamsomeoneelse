@@ -1,17 +1,26 @@
 #!/usr/bin/env bash
+#!/bin/bash
 
- if [ "$#" -ne 1 ]; then
+# Enable debug mode
+set -x
+
+# Check if username is provided as argument
+if [ "$#" -ne 1 ]; then
     echo "Usage: $0 <username>"
     exit 1
- fi
+fi
 
- username="$1"
+username="$1"
 
-
- if id "$username" &>/dev/null; then
+# Check if the provided user exists
+if id "$username" &>/dev/null; then
     # Run whoami under the specified user
     sudo -u "$username" whoami
-
- else
+else
     echo "User '$username' does not exist."
     exit 1
+fi
+
+# Disable debug mode
+set +x
+
