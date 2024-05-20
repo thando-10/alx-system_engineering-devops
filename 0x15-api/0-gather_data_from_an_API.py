@@ -3,6 +3,7 @@
 import requests
 import sys
 
+
 def get_employee_todo_progress(employee_id):
     # Base URL for the API
     base_url = 'https://jsonplaceholder.typicode.com'
@@ -42,6 +43,7 @@ def get_employee_todo_progress(employee_id):
 
     except requests.exceptions.RequestException as e:
         print("An error occurred while fetching data:", e)
+
 
 if __name__ == '__main__':
     if len(sys.argv) != 2:
