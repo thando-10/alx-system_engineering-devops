@@ -2,6 +2,7 @@
 
 import requests
 
+
 def count_words(subreddit, word_list, after=None, word_count={}):
     """
     Recursively query the Reddit API, parse the titles of all hot articles, and print a sorted count of given keywords.
